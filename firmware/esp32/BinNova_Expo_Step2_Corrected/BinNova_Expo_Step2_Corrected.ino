@@ -1,4 +1,4 @@
-#include <Adafruit_GFX.h>
+﻿#include <Adafruit_GFX.h>
 #include <Adafruit_ST7735.h>
 #include <SPI.h>
 #include <WiFi.h>
@@ -49,12 +49,14 @@
 // WIFI + WEB SERVER + sms api
 // =====================================================
 
-const char* ssid = "vivo T5x 5G"; // wifi name
-const char* password = "12341234"; // wifi password
-const String account_sid = "SMbdbe77e9f331b3f1cc9e8442fea3"; // your sms accout api
-const String auth_token = "9720550888f7e96f83daccaa2e722f89"; // your api token
-const String from_number = "+17372508034"; // tiwlo no: e.g., "+1234567890"
-const String to_number = "+918524060489"; // Unga verified mobile number
+#include "secrets.h"
+
+const char* ssid = WIFI_SSID;
+const char* password = WIFI_PASSWORD;
+const String account_sid = SMS_ACCOUNT_SID;
+const String auth_token = SMS_AUTH_TOKEN;
+const String from_number = SMS_FROM_NUMBER;
+const String to_number = SMS_TO_NUMBER;
 
 WebServer server(80);
 
@@ -217,10 +219,10 @@ h1{
 
   <div class="header">
     <h1>BINNOVA</h1>
-    <div class="live">● LIVE</div>
+    <div class="live">â— LIVE</div>
   </div>
 
-  <div class="subtitle">SMART WASTE BIN • ESP32 IoT</div>
+  <div class="subtitle">SMART WASTE BIN â€¢ ESP32 IoT</div>
 
   <div class="card">
 
@@ -265,7 +267,7 @@ h1{
   </div>
 
   <div class="footer">
-    Live data • Updates automatically
+    Live data â€¢ Updates automatically
   </div>
 
 </div>
